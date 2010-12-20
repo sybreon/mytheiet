@@ -1,67 +1,73 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language ?>" lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
   <head>
-    
     <title><?php print $head_title; ?></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=8"> 
     <?php print $head; ?>
     <?php print $styles; ?>
     <!--[if lte IE 6]><style type="text/css" media="all">@import "<?php print $base_path . path_to_theme() ?>/css/ie6.css"</style><![endif]-->
     <!--[if IE 7]><style type="text/css" media="all">@import "<?php print $base_path . path_to_theme() ?>/css/ie7.css"</style><![endif]-->
     <?php print $scripts; ?>
   </head>
-
   <body class="<?php print $body_classes; ?>">
-    <div id="skip"><a href="#content"><?php print t('Skip to Content'); ?></a> <a href="#navigation"><?php print t('Skip to Navigation'); ?></a></div>  
     <div id="page">
-
     <!-- ______________________ HEADER _______________________ -->
-
-    <div id="header">
-
-      <div id="logo-title">
-	
-        <?php if (!empty($logo)): ?>
+   <div id="blackbar">
+   <div id="gbar" class="row">
+   <ul class="hmenu column grid_7" id="gmenu">
+   <li><a href="<?php print $front_page; ?>">Malaysia Network</a></li>
+   <li><a href="http://www.theiet.org" target="_blank">Global Network</a></li>
+   <li><a href="http://kn.theiet.org" target="_blank">Knowledge Network</a></li>
+   </ul>
+   <ul class="hmenu column grid_5" id="msearch">
+<li class="msearch">
+  <?php print $search_box; ?>
+</li>
+</ul>
+   </div>
+   </div>
+   
+    <div id="header" class="row">
+      <div id="logo-title" class="column grid_3">       
           <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>"/>
+            <img src="<?php print $base_path . path_to_theme() ?>/images/iet-logo.gif" alt="<?php print t('Home'); ?>"/>
           </a>
-        <?php endif; ?>
-
-        <div id="name-and-slogan">
-          <?php if (!empty($site_name)): ?>
-            <h1 id="site-name">
-              <a href="<?php print $front_page ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-            </h1>
-          <?php endif; ?>
-          <?php if (!empty($site_slogan)): ?>
-            <div id="site-slogan"><?php print $site_slogan; ?></div>
-          <?php endif; ?>
-        </div> <!-- /name-and-slogan -->
-
       </div> <!-- /logo-title -->
-
       <?php if ($header): ?>
-        <div id="header-region">
+        <div id="header-region" class="column grid_9">
           <?php print $header; ?>
         </div>
       <?php endif; ?>
-
-      <?php // Uncomment to add the search box.// print $search_box; ?>
-
+	
     </div> <!-- /header -->
+
+         <?php if (!empty($primary_links)): ?>
+     <div id="pmenu" class="row"><div class="column grid_12"><?php if (!empty($primary_links)){ print theme('links', $primary_links, array('id' => 'primary', 'class' => 'hmenu')); } ?></div></div>
+     <?php endif;?>
+
+   <div class="clear wbox">&nbsp;</div>
 
     <!-- ______________________ MAIN _______________________ -->
 
-    <div id="main" class="clearfix">
+    <div id="main" class="row">
     
-      <div id="content">
-        <div id="content-inner" class="inner column center">
+        <?php if ($left): ?>
+          <div id="sidebar-first" class="column grid_3">
+            <div id="sidebar-first-inner" class="inner">
+              <?php print $left; ?>
+            </div>
+          </div>
+        <?php endif; ?> <!-- /sidebar-left -->
+
+      <div id="content" class="column grid_7">
+        <div id="content-inner" class="inner">
 
           <?php if ($content_top): ?>
             <div id="content-top">
               <?php print $content_top; ?>
             </div> <!-- /#content-top -->
           <?php endif; ?>
+
 
           <?php if ($breadcrumb || $title || $mission || $messages || $help || $tabs): ?>
             <div id="content-header">
@@ -99,26 +105,11 @@
             </div><!-- /#content-bottom -->
           <?php endif; ?>
 
-          </div>
+         </div>
         </div> <!-- /content-inner /content -->
 
-        <?php if (!empty($primary_links) || !empty($secondary_links)): ?>
-          <div id="navigation" class="menu <?php if (!empty($primary_links)) { print "with-main-menu"; } if (!empty($secondary_links)) { print " with-sub-menu"; } ?>">
-            <?php if (!empty($primary_links)){ print theme('links', $primary_links, array('id' => 'primary', 'class' => 'links main-menu')); } ?>
-            <?php if (!empty($secondary_links)){ print theme('links', $secondary_links, array('id' => 'secondary', 'class' => 'links sub-menu')); } ?>
-          </div> <!-- /navigation -->
-        <?php endif; ?>
-
-        <?php if ($left): ?>
-          <div id="sidebar-first" class="column sidebar first">
-            <div id="sidebar-first-inner" class="inner">
-              <?php print $left; ?>
-            </div>
-          </div>
-        <?php endif; ?> <!-- /sidebar-left -->
-
         <?php if ($right): ?>
-          <div id="sidebar-second" class="column sidebar second">
+          <div id="sidebar-second" class="column grid_2">
             <div id="sidebar-second-inner" class="inner">
               <?php print $right; ?>
             </div>
@@ -129,10 +120,17 @@
 
       <!-- ______________________ FOOTER _______________________ -->
 
+   <div class="clear wbox">&nbsp;</div>
+          <?php if (!empty($secondary_links)): ?>
+    <div id="smenu" class="row"><div class="column grid_12"><?php if (!empty($secondary_links)){ print theme('links', $secondary_links, array('id' => 'secondary', 'class' => 'hmenu')); } ?></div></div>
+    <?php endif;?>
+   <div class="clear wbox">&nbsp;</div>
       <?php if(!empty($footer_message) || !empty($footer_block)): ?>
-        <div id="footer">
+        <div id="footer" class="row">
+	   <div class="column grid_12">
           <?php print $footer_message; ?>
           <?php print $footer_block; ?>
+	  </div>
         </div> <!-- /footer -->
       <?php endif; ?>
 
