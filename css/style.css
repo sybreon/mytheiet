@@ -4,6 +4,10 @@ body {
 
 a { text-decoration:none;color:#333; }
 
+h1, h2, h3, h1>a, h2>a, h3>a  { color:#09c; }
+
+p { margin-bottom:1.0em; }
+
 .hmenu li { display:table-cell;vertical-align:middle;list-style:none;padding:0;margin:0; }
 .hmenu li a { margin:0;padding:8px 16px; }
 
@@ -32,8 +36,54 @@ a { text-decoration:none;color:#333; }
 #smenu .hmenu li a { padding:4px; }
 
 
-.inner { padding:10px; }
+
 #sidebar-first-inner { background:#eee;border:1px solid #ccc; }
-#sidebar-second-inner { }
+.inner { padding:10px; }
+
+#sidebar-first div.block { font-size:small; }
+#sidebar-first h3.block-title { color:#000; }
+#sidebar-first ul.menu { padding:0; }
+#sidebar-first ul.menu>li {                            
+                            list-style:none;
+                            background:url("resultset_next.png") no-repeat;
+                            padding:0 15px;
+                            margin:0; 
+                            }
+#sidebar-first ul.menu>li>a { 
+                              color:#104;
+                              font-weight:bold;
+                            }
+#sidebar-first div.even { 
+                          margin:10px 0;
+                          padding:5px 0;
+                          }
+
+#sidebar-second div.item-list>ul>li { 
+                                      color:#104;
+                                      list-style:square outside url("bullet-blue.gif");
+                                      padding:0;
+                                      margin:0; 
+                                      }
+#sidebar-second div.block { font-size:small; }
+#sidebar-second h3.block-title { color:#09c; }
+#sidebar-second div.even { 
+                           border-top:1px solid #cdd;
+                           border-bottom:1px solid #cdd;
+                           margin:10px 0;
+                           padding:5px 0;
+                            }
+
+div.node-inner { margin:10px 0;
+                 padding:5px 0;
+                 }
+
+div.taxonomy>ul.links>li {
+/*                           background:url("resultset_next.png") no-repeat;*/
+                           padding:0;
+                           margin:0;
+                           border:1px dotted #09c;
+                           }
+div.taxonomy>ul.links>li>a { color:#104;font-size:small;padding:5px; }
+li.node_read_more>a { font-size:x-small; }
 
 #footer { font-size:x-small;color:#333;height:64px; }
