@@ -121,6 +121,12 @@
       <!-- ______________________ FOOTER _______________________ -->
 
    <div class="clear wbox">&nbsp;</div>
+   <div class="row footbar">
+   <div class="column grid_4 footl"><?=$footleft ?></div>
+   <div class="column grid_4 footm"><?=$footmida ?></div>
+   <div class="column grid_4 footr"><?=$footrite ?></div>
+   </div>
+   <div class="clear wbox">&nbsp;</div>
           <?php if (!empty($secondary_links)): ?>
     <div id="smenu" class="row"><div class="column grid_12"><?php if (!empty($secondary_links)){ print theme('links', $secondary_links, array('id' => 'secondary', 'class' => 'hmenu')); } ?></div></div>
     <?php endif;?>

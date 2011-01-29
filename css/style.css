@@ -8,6 +8,8 @@ h1, h2, h3, h1>a, h2>a, h3>a  { color:#09c; }
 
 p { margin-bottom:1.0em; }
 
+dt { font-weight:bold; }
+
 .hmenu li { display:table-cell;vertical-align:middle;list-style:none;padding:0;margin:0; }
 .hmenu li a { margin:0;padding:8px 16px; }
 
@@ -17,7 +19,7 @@ p { margin-bottom:1.0em; }
 #gbar .hmenu li:first-child { border:none;font-weight:bold; }
 #gmenu { float:left; }
 
-#header { background:#fff;height:128px; }
+#header { background:url("../images/banner.png");height:128px; }
 #logo-title img { margin:16px 0; }
 
 #search { color:#fff;font-size:small; }
@@ -87,3 +89,8 @@ div.taxonomy>ul.links>li>a { color:#104;font-size:small;padding:5px; }
 li.node_read_more>a { font-size:x-small; }
 
 #footer { font-size:x-small;color:#333;height:64px; }
+
+div.footbar { background:#333; }
+div.footbar li a { color:#fff; }
+div.footbar div.block-inner { padding:16px; }
+div.footbar div.footm { border-left:1px dotted #ccc; border-right:1px dotted #ccc; margin:0 -1px; }

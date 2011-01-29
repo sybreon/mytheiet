@@ -11,6 +11,10 @@ regions[left] = First sidebar
 regions[right] = Second sidebar
 regions[footer_block] = Footer
 regions[content_bottom] = Content bottom
+regions[footleft] = Footer left
+regions[footmida] = Footer middle A
+regions[footmidb] = Footer middle B
+regions[footrite] = Footer right
 
 features[] = logo
 features[] = name
