@@ -18,6 +18,7 @@
    <li><a href="<?php print $front_page; ?>">Malaysia Network</a></li>
    <li><a href="http://www.theiet.org" target="_blank">Global Network</a></li>
    <li><a href="http://kn.theiet.org" target="_blank">Knowledge Network</a></li>
+   <li><a href="http://eandt.theiet.org" target="_blank">E &amp; T</a></li>
    </ul>
    <ul class="hmenu column grid_5" id="msearch">
 <li class="msearch">
@@ -121,11 +122,13 @@
       <!-- ______________________ FOOTER _______________________ -->
 
    <div class="clear wbox">&nbsp;</div>
-   <div class="row footbar">
+
+   <div class="row" id="footbar">
    <div class="column grid_4 footl"><?=$footleft ?></div>
    <div class="column grid_4 footm"><?=$footmida ?></div>
    <div class="column grid_4 footr"><?=$footrite ?></div>
    </div>
+
    <div class="clear wbox">&nbsp;</div>
           <?php if (!empty($secondary_links)): ?>
     <div id="smenu" class="row"><div class="column grid_12"><?php if (!empty($secondary_links)){ print theme('links', $secondary_links, array('id' => 'secondary', 'class' => 'hmenu')); } ?></div></div>

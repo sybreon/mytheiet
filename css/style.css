@@ -90,7 +90,7 @@ li.node_read_more>a { font-size:x-small; }
 
 #footer { font-size:x-small;color:#333;height:64px; }
 
-div.footbar { background:#333; }
-div.footbar li a { color:#fff; }
-div.footbar div.block-inner { padding:16px; }
-div.footbar div.footm { border-left:1px dotted #ccc; border-right:1px dotted #ccc; margin:0 -1px; }
+#footbar { background:#333; }
+#footbar li a { color:#fff;font-size:x-small; }
+#footbar div.block-inner { padding:16px; }
+#footbar div.footm { border-left:1px dotted #ccc; border-right:1px dotted #ccc; margin:0 -1px; }
